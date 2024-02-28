@@ -1,6 +1,6 @@
 import "../styles/personalInfo.css";
 
-export default function PersonalInfo({ onChange }) {
+export default function PersonalInfo({ dataProps, onChange }) {
   return (
     <div className='personal'>
       <div className='profile'>
@@ -27,6 +27,7 @@ export default function PersonalInfo({ onChange }) {
               id='firstname'
               name='firstName'
               onChange={onChange}
+              value={dataProps.firstName}
             />
           </div>
           <div className='extended'>
@@ -35,6 +36,7 @@ export default function PersonalInfo({ onChange }) {
               type='text'
               id='lastname'
               name='lastName'
+              value={dataProps.lastName}
               onChange={onChange}
             />
           </div>
@@ -45,6 +47,7 @@ export default function PersonalInfo({ onChange }) {
             type='text'
             id='profession'
             name='profession'
+            value={dataProps.profession}
             onChange={onChange}
           />
         </div>
@@ -55,6 +58,7 @@ export default function PersonalInfo({ onChange }) {
               type='text'
               id='city'
               name='city'
+              value={dataProps.city}
               onChange={onChange}
             />
           </div>
@@ -64,6 +68,7 @@ export default function PersonalInfo({ onChange }) {
               type='text'
               id='country'
               name='country'
+              value={dataProps.country}
               onChange={onChange}
             />
           </div>
@@ -75,6 +80,7 @@ export default function PersonalInfo({ onChange }) {
               type='number'
               id='phone'
               name='phone'
+              value={dataProps.phone}
               onChange={onChange}
             />
           </div>
@@ -84,6 +90,7 @@ export default function PersonalInfo({ onChange }) {
               type='email'
               id='email'
               name='email'
+              value={dataProps.email}
               onChange={onChange}
             />
           </div>

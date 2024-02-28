@@ -79,7 +79,6 @@ form {
 .preview {
     align-self: center;
     height: 40%;
-    transform: translateY(25%);
     margin-right: 1vw;
 }
 
@@ -123,12 +122,12 @@ form {
     font-weight: bolder;
     align-self: baseline;
     margin-left: 0.5vw;
-    margin-top: 0;
+    margin-top: 1vh;
     font-size: 0.9em;
     width: 95%;
 }
 
-.preview-contact p {
+p {
     margin: 0;
 }
 

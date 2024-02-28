@@ -1,5 +1,5 @@
 import "../styles/workHistory.css";
-export default function WorkHistory({ onChange }) {
+export default function WorkHistory({ dataProps, onChange }) {
   return (
     <div className='work'>
       <h1 className='heading'>Tell us about your most recent job</h1>
@@ -12,6 +12,7 @@ export default function WorkHistory({ onChange }) {
               type='text'
               id='title'
               name='jobTitle'
+              value={dataProps.jobTitle}
               onChange={onChange}
             />
           </div>
@@ -21,6 +22,7 @@ export default function WorkHistory({ onChange }) {
               type='text'
               id='employer'
               name='employer'
+              value={dataProps.employer}
               onChange={onChange}
             />
           </div>
@@ -31,6 +33,7 @@ export default function WorkHistory({ onChange }) {
             type='text'
             id='job-location'
             name='jobLocation'
+            value={dataProps.jobLocation}
             onChange={onChange}
           />
         </div>
@@ -41,6 +44,7 @@ export default function WorkHistory({ onChange }) {
               type='date'
               id='start-year'
               name='startDate'
+              value={dataProps.startDate}
               onChange={onChange}
             />
           </div>
@@ -50,6 +54,7 @@ export default function WorkHistory({ onChange }) {
               type='date'
               id='end-year'
               name='endDate'
+              value={dataProps.endDate}
               onChange={onChange}
             />
           </div>

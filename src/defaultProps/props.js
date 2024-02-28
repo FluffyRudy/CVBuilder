@@ -17,4 +17,12 @@ const workInfo = {
     isCurrentJob: false
 }
 
-export default {personalInfo, workInfo};
+const educationInfo = {
+    collegeName: '',
+    collegeLocation: '',
+    degree: '',
+    field: '',
+    graduationDate: ''
+}
+
+export default {personalInfo, workInfo, educationInfo};

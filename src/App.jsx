@@ -7,8 +7,9 @@ import "./App.css";
 
 function App() {
   const [activeComponent, setActiveComponent] = useState("PersonalInfo");
-  const [userInfo, setUserInfo] = useState(data.personalInfo);
-  const [workInfo, setWorkinfo] = useState(data.workInfo);
+  const [userInfo, setUserInfo] = useState({ ...data.personalInfo });
+  const [workInfo, setWorkinfo] = useState({ ...data.workInfo });
+  const [educationInfo, setEducationInfo] = useState({ ...data.educationInfo });
 
   function handleInputChange(e, setState) {
     const { name, value } = e.target;
@@ -19,16 +20,30 @@ function App() {
     switch (activeComponent) {
       case "PersonalInfo":
         return (
-          <PersonalInfo onChange={(e) => handleInputChange(e, setUserInfo)} />
+          <PersonalInfo
+            dataProps={userInfo}
+            onChange={(e) => handleInputChange(e, setUserInfo)}
+          />
         );
       case "WorkHistory":
         return (
-          <WorkHistory onChange={(e) => handleInputChange(e, setWorkinfo)} />
+          <WorkHistory
+            dataProps={workInfo}
+            onChange={(e) => handleInputChange(e, setWorkinfo)}
+          />
         );
       case "EducationInfo":
-        return <EducationInfo />;
+        return (
+          <EducationInfo
+            dataProps={educationInfo}
+            onChange={(e) => handleInputChange(e, setEducationInfo)}
+          />
+        );
       default:
-        <PersonalInfo onChange={(e) => handleInputChange(e, setUserInfo)} />;
+        <PersonalInfo
+          dataProps={userInfo}
+          onChange={(e) => handleInputChange(e, setUserInfo)}
+        />;
     }
   };
 
@@ -63,9 +78,13 @@ function App() {
                 src='https://img.icons8.com/3d-fluency/94/user-male-circle.png'
                 alt='user-male-circle'
               />
-              <p className='preview-fname'>
-                {userInfo.firstName + " " + userInfo.lastName}
-              </p>
+              <div className='name-profession'>
+                <p className='preview-fname'>
+                  {userInfo.firstName + " " + userInfo.lastName}
+                </p>
+                <p style={{ fontSize: "0.7em" }}>{userInfo.profession}</p>
+              </div>
+
               <div className='preview-contact'>
                 <p className='preview-label'>Contact</p>
                 <p style={{ fontSize: "0.5em" }}>Phone: {userInfo.phone}</p>
@@ -86,7 +105,7 @@ function App() {
                   <div className='company-employee'>
                     <p>{workInfo.jobTitle}</p>
                     <p>
-                      {workInfo.employer + ", "}
+                      {workInfo.employer && workInfo.employer + ", "}
                       {workInfo.jobLocation && workInfo.jobLocation}{" "}
                     </p>
                   </div>
