@@ -53,13 +53,14 @@ main {
 label {
     display: block;
     font-size: 1.2em;
+    margin-bottom: 0;
 }
 
 input {
     width: 90%;
     padding: 1vh 0;
     border-radius: 1vmax;
-    margin: 2vmax 0;
+    margin: 0.5vmax 0 1.5vmax 0;
     text-align: center;
     padding: 0.8vmax 0;
     font-size: 1.5em;
@@ -72,12 +73,13 @@ input:focus {
 
 form {
     width: 95%;
+    margin-top: 3vmax;
 }
 
 .preview {
     align-self: center;
     height: 40%;
-    transform: translateY(30%);
+    transform: translateY(25%);
     margin-right: 1vw;
 }
 
@@ -87,6 +89,57 @@ form {
     align-self: center;
     border: 1px solid #fff;
     border-radius: 1vmax;
+    display: flex;
+}
+
+.preview-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    background-color: #07142b;
+    border-radius: 1vmax;
+}
+.preview-label {
+    background-color: #010711;
+}
+
+.preview-menu p {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 1em;
+}
+
+.preview-fname {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0;
+    font-weight: bolder;
+}
+
+.preview-contact {
+    font-weight: bolder;
+    align-self: baseline;
+    margin-left: 0.5vw;
+    margin-top: 0;
+    font-size: 0.9em;
+    width: 95%;
+}
+
+.preview-contact p {
+    margin: 0;
+}
+
+.other-detail {
+    flex: 1;
+    font-size: 0.5em;
+}
+
+.work-history-info {
+    display: flex;
+    justify-content: space-around;
 }
 
 @media (max-width: 1000px) {

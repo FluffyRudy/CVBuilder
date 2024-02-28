@@ -1,6 +1,6 @@
 import "../styles/personalInfo.css";
 
-export default function PersonalInfo() {
+export default function PersonalInfo({ onChange }) {
   return (
     <div className='personal'>
       <div className='profile'>
@@ -16,7 +16,7 @@ export default function PersonalInfo() {
         What&#39;s the best way for employers to contact you
       </h1>
       <p className='contact-suggestion'>
-        Suggestion: Include an emailand phone number.
+        Suggestion: Include an email and phone number.
       </p>
       <form onSubmit={(e) => e.preventDefault()}>
         <div className='fullname'>
@@ -25,7 +25,8 @@ export default function PersonalInfo() {
             <input
               type='text'
               id='firstname'
-              name='firstname'
+              name='firstName'
+              onChange={onChange}
             />
           </div>
           <div className='extended'>
@@ -33,7 +34,8 @@ export default function PersonalInfo() {
             <input
               type='text'
               id='lastname'
-              name='lastname'
+              name='lastName'
+              onChange={onChange}
             />
           </div>
         </div>
@@ -43,15 +45,17 @@ export default function PersonalInfo() {
             type='text'
             id='profession'
             name='profession'
+            onChange={onChange}
           />
         </div>
         <div className='location'>
           <div className='extended'>
-            <label htmlFor='location'>City</label>
+            <label htmlFor='city'>City</label>
             <input
               type='text'
-              id='location'
-              name='location'
+              id='city'
+              name='city'
+              onChange={onChange}
             />
           </div>
           <div className='extended'>
@@ -60,16 +64,18 @@ export default function PersonalInfo() {
               type='text'
               id='country'
               name='country'
+              onChange={onChange}
             />
           </div>
         </div>
         <div className='contact'>
           <div className='extended'>
-            <label htmlFor='phone'>Contact</label>
+            <label htmlFor='phone'>Phone</label>
             <input
               type='number'
               id='phone'
               name='phone'
+              onChange={onChange}
             />
           </div>
           <div className='extended'>
@@ -78,6 +84,7 @@ export default function PersonalInfo() {
               type='email'
               id='email'
               name='email'
+              onChange={onChange}
             />
           </div>
         </div>

@@ -1,0 +1,16 @@
+.work {
+    margin-top: 8vh;
+}
+
+.job-title, .work-duration {
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-location {
+    width: 50%;
+}
+
+.other-detail {
+    text-align: center;
+}
