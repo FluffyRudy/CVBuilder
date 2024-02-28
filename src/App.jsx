@@ -38,15 +38,6 @@ function App() {
         </button>
       </div>
       <main>
-        <div className='profile'>
-          <img
-            width='94'
-            height='94'
-            src='https://img.icons8.com/3d-fluency/94/user-male-circle.png'
-            alt='user-male-circle'
-          />
-          <button>Upload</button>
-        </div>
         <div className='form'>
           <div className='dataform'>{renderComponent()}</div>
         </div>

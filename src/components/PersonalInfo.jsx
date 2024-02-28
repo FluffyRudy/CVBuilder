@@ -3,6 +3,15 @@ import "../styles/personalInfo.css";
 export default function PersonalInfo() {
   return (
     <div className='personal'>
+      <div className='profile'>
+        <img
+          width='94'
+          height='94'
+          src='https://img.icons8.com/3d-fluency/94/user-male-circle.png'
+          alt='user-male-circle'
+        />
+        <button>Upload</button>
+      </div>
       <h1 className='heading'>
         What&#39;s the best way for employers to contact you
       </h1>
