@@ -1,0 +1,26 @@
+.heading {
+    width: 100%;
+    margin-top: 3vh;
+    color: #fff;
+}
+
+.contact-suggestion {
+    padding: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+
+#profession {
+    width: 95%;
+}
+
+.fullname, .contact, .location {
+    display: flex;
+    justify-content: space-between;
+}
+
+.extended {
+    flex: 1;
+}
