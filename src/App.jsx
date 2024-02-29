@@ -11,7 +11,7 @@ function App() {
   const [userInfo, setUserInfo] = useState({ ...data.personalInfo });
   const [workInfo, setWorkinfo] = useState({ ...data.workInfo });
   const [educationInfo, setEducationInfo] = useState({ ...data.educationInfo });
-  const [summery, setSummery] = useState({ ...data.summery });
+  const [summery, setSummery] = useState({ ...data.summeryInfo });
   const [profilePicture, setProfilePicture] = useState(
     "https://img.icons8.com/3d-fluency/94/user-male-circle.png"
   );
