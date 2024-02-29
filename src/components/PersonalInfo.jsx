@@ -1,6 +1,19 @@
 import "../styles/personalInfo.css";
+import { useState } from "react";
 
 export default function PersonalInfo({ dataProps, onChange }) {
+  const [phoneError, setPhoneError] = useState("");
+
+  const handlePhoneChange = (e) => {
+    const phoneInput = e.target.value;
+    if (!/^[0-9]*$/.test(phoneInput)) {
+      setPhoneError("Please enter a valid phone number.");
+    } else {
+      setPhoneError("");
+    }
+    onChange(e);
+  };
+
   return (
     <div className='personal'>
       <div className='profile'>
@@ -18,7 +31,7 @@ export default function PersonalInfo({ dataProps, onChange }) {
       <p className='contact-suggestion'>
         Suggestion: Include an email and phone number.
       </p>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form>
         <div className='fullname'>
           <div className='extended'>
             <label htmlFor='firstname'>First Name</label>
@@ -77,12 +90,13 @@ export default function PersonalInfo({ dataProps, onChange }) {
           <div className='extended'>
             <label htmlFor='phone'>Phone</label>
             <input
-              type='number'
+              type='text'
               id='phone'
               name='phone'
-              value={dataProps.phone}
-              onChange={onChange}
+              value={dataProps.phoneNumber}
+              onChange={handlePhoneChange}
             />
+            {phoneError && <p style={{ color: "red" }}>{phoneError}</p>}
           </div>
           <div className='extended'>
             <label htmlFor='email'>Email</label>

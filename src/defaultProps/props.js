@@ -25,4 +25,8 @@ const educationInfo = {
     graduationDate: ''
 }
 
-export default {personalInfo, workInfo, educationInfo};
+const summeryInfo = {
+    info: ''
+}
+
+export default {personalInfo, workInfo, educationInfo, summeryInfo};

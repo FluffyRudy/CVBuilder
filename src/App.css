@@ -10,6 +10,10 @@ button {
     font-weight: bolder;
 }
 
+h2 {
+    margin-top: 0;
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -66,6 +70,17 @@ input {
     font-size: 1.5em;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+
 input:focus {
     outline: none;
     border: 1px solid lime;
@@ -80,6 +95,7 @@ form {
     align-self: center;
     height: 40%;
     margin-right: 1vw;
+    margin-top: 5vmax;
 }
 
 .preview-box {
@@ -102,6 +118,7 @@ form {
 }
 .preview-label {
     background-color: #010711;
+    text-align: left;
 }
 
 .preview-menu p {
@@ -118,12 +135,11 @@ form {
     font-weight: bolder;
 }
 
-.preview-contact {
+.preview-contact-loc {
     font-weight: bolder;
     align-self: baseline;
     margin-left: 0.5vw;
     margin-top: 1vh;
-    font-size: 0.9em;
     width: 95%;
 }
 
@@ -136,9 +152,28 @@ p {
     font-size: 0.5em;
 }
 
+.preview-label {
+    margin-top: 2vh;
+}
+
+.first-label {
+    margin-top: 0;
+}
+
 .work-history-info {
     display: flex;
     justify-content: space-around;
+}
+
+.education-degree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.perview-summery {
+    text-align: justify;
 }
 
 @media (max-width: 1000px) {
