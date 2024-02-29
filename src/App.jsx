@@ -12,6 +12,9 @@ function App() {
   const [workInfo, setWorkinfo] = useState({ ...data.workInfo });
   const [educationInfo, setEducationInfo] = useState({ ...data.educationInfo });
   const [summery, setSummery] = useState({ ...data.summery });
+  const [profilePicture, setProfilePicture] = useState(
+    "https://img.icons8.com/3d-fluency/94/user-male-circle.png"
+  );
 
   function handleInputChange(e, setState) {
     const { name, value } = e.target;
@@ -23,6 +26,8 @@ function App() {
       case "PersonalInfo":
         return (
           <PersonalInfo
+            profilePic={profilePicture}
+            setProfilePicture={setProfilePicture}
             dataProps={userInfo}
             onChange={(e) => handleInputChange(e, setUserInfo)}
           />
@@ -50,6 +55,8 @@ function App() {
         );
       default:
         <PersonalInfo
+          profilePic={profilePicture}
+          setProfilePicture={setProfilePicture}
           dataProps={userInfo}
           onChange={(e) => handleInputChange(e, setUserInfo)}
         />;
@@ -88,7 +95,7 @@ function App() {
               <img
                 width='50'
                 height='50'
-                src='https://img.icons8.com/3d-fluency/94/user-male-circle.png'
+                src={profilePicture}
                 alt='user-male-circle'
               />
               <div className='name-profession'>

@@ -1,11 +1,13 @@
 import "../styles/personalInfo.css";
 import { useState } from "react";
 
-export default function PersonalInfo({ dataProps, onChange }) {
+export default function PersonalInfo({
+  dataProps,
+  onChange,
+  profilePic,
+  setProfilePicture,
+}) {
   const [phoneError, setPhoneError] = useState("");
-  const [profilePic, setProfilePic] = useState(
-    "https://img.icons8.com/3d-fluency/94/user-male-circle.png"
-  );
 
   const handlePhoneChange = (e) => {
     const phoneInput = e.target.value;
@@ -19,7 +21,7 @@ export default function PersonalInfo({ dataProps, onChange }) {
 
   const handleProfilePicChange = (e) => {
     if (e.target.files[0]) {
-      setProfilePic(URL.createObjectURL(e.target.files[0]));
+      setProfilePicture(URL.createObjectURL(e.target.files[0]));
     }
   };
 
