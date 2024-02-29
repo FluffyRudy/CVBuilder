@@ -32,11 +32,8 @@
     height: 50%;
 }
 
-.profile img {
-    transform: translateX(35%);
-}
 
-.profile button {
+.profile label {
     text-align: center;
     margin-top: 1vh;
     font-size: 1.5em;
@@ -44,4 +41,16 @@
     border: 1px solid #fff;
     border-radius: 1vmax;
     width: 40%;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+.profile label:hover {
+    background-color: #fff;
+    color: #000;
+    font-weight: bolder;
+}
+
+.preview {
+    visibility: visible;
 }

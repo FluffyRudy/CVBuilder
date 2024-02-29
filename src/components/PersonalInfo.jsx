@@ -3,6 +3,9 @@ import { useState } from "react";
 
 export default function PersonalInfo({ dataProps, onChange }) {
   const [phoneError, setPhoneError] = useState("");
+  const [profilePic, setProfilePic] = useState(
+    "https://img.icons8.com/3d-fluency/94/user-male-circle.png"
+  );
 
   const handlePhoneChange = (e) => {
     const phoneInput = e.target.value;
@@ -14,19 +17,32 @@ export default function PersonalInfo({ dataProps, onChange }) {
     onChange(e);
   };
 
+  const handleProfilePicChange = (e) => {
+    if (e.target.files[0]) {
+      setProfilePic(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+
   return (
     <div className='personal'>
       <div className='profile'>
         <img
           width='94'
           height='94'
-          src='https://img.icons8.com/3d-fluency/94/user-male-circle.png'
+          src={profilePic}
           alt='user-male-circle'
         />
-        <button>Upload</button>
+        <input
+          type='file'
+          id='profilePicInput'
+          accept='image/*'
+          onChange={handleProfilePicChange}
+          style={{ display: "none" }}
+        />
+        <label htmlFor='profilePicInput'>Upload</label>
       </div>
       <h1 className='heading'>
-        What&#39;s the best way for employers to contact you
+        What's the best way for employers to contact you
       </h1>
       <p className='contact-suggestion'>
         Suggestion: Include an email and phone number.

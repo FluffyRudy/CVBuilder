@@ -1,3 +1,5 @@
+import "../styles/educationInfo.css";
+
 export default function EducationInfo({ dataProps, onChange }) {
   return (
     <div className='school'>
