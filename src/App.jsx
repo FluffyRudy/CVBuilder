@@ -1,9 +1,9 @@
 import { useState } from "react";
-import PersonalInfo from "./components/PersonalInfo";
-import WorkHistory from "./components/WorkHistory";
-import EducationInfo from "./components/EducationInfo";
-import Summery from "./components/summery";
-import data from "./defaultProps/props";
+import PersonalInfo from "./components/PersonalInfo.jsx";
+import WorkHistory from "./components/WorkHistory.jsx";
+import EducationInfo from "./components/EducationInfo.jsx";
+import Summery from "./components/summery.jsx";
+import data from "./defaultProps/props.js";
 import "./App.css";
 
 function App() {
