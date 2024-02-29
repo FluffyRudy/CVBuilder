@@ -29,7 +29,7 @@ To start the server, run:
 ```
 npm run dev
 ```
-Then open http://localhost:&lt;PORT&gt; to view it in the browser.
+Then open http://localhost:PORT to view it in the browser.
 
 
 ## Future Enhancements
