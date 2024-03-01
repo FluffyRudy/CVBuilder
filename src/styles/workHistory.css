@@ -1,16 +1,29 @@
 .work {
-    margin-top: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
 }
 
-.job-title, .work-duration {
+.job-title,
+.work-duration
+{
     display: flex;
     justify-content: space-between;
 }
 
-.job-location {
-    width: 50%;
+.job-title div,
+.work-duration div {
+    flex-basis: 48%;
 }
 
-.other-detail {
-    text-align: center;
+.job-location {
+    flex: 1;
+}
+#job-location 
+{
+    width: 45%;    
 }

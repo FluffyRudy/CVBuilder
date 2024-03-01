@@ -4,13 +4,13 @@ export default function EducationInfo({ dataProps, onChange }) {
   return (
     <div className='school'>
       <h1 className='heading'>Tell us about your education</h1>
-      <p className='contact-suggestion'>
+      <p className='suggestion'>
         Enter your education experience so far, even if you are a current
         student or did not graduate.
       </p>
       <form onSubmit={(e) => e.preventDefault()}>
         <div className='college-name'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='college'>College Name</label>
             <input
               type='text'
@@ -20,7 +20,7 @@ export default function EducationInfo({ dataProps, onChange }) {
               onChange={onChange}
             />
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='college-location'>Location</label>
             <input
               type='text'
@@ -42,7 +42,7 @@ export default function EducationInfo({ dataProps, onChange }) {
           />
         </div>
         <div className='study-field'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='study-field'>Study Field</label>
             <input
               type='text'
@@ -52,7 +52,7 @@ export default function EducationInfo({ dataProps, onChange }) {
               onChange={onChange}
             />
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='graduation'>Graduation Date</label>
             <input
               type='date'

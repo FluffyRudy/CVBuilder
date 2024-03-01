@@ -31,27 +31,32 @@ export default function PersonalInfo({
         <img
           width='94'
           height='94'
+          id='profile-picture'
           src={profilePic}
           alt='user-male-circle'
         />
         <input
           type='file'
-          id='profilePicInput'
+          id='profile-pic-input'
           accept='image/*'
           onChange={handleProfilePicChange}
           style={{ display: "none" }}
         />
-        <label htmlFor='profilePicInput'>Upload</label>
+        <label
+          id='profile-pic-label'
+          htmlFor='profile-pic-input'>
+          Upload
+        </label>
       </div>
       <h1 className='heading'>
         What's the best way for employers to contact you
       </h1>
-      <p className='contact-suggestion'>
+      <p className='suggestion'>
         Suggestion: Include an email and phone number.
       </p>
       <form>
         <div className='fullname'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='firstname'>First Name</label>
             <input
               type='text'
@@ -61,7 +66,7 @@ export default function PersonalInfo({
               value={dataProps.firstName}
             />
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='lastname'>Last Name</label>
             <input
               type='text'
@@ -83,7 +88,7 @@ export default function PersonalInfo({
           />
         </div>
         <div className='location'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='city'>City</label>
             <input
               type='text'
@@ -93,7 +98,7 @@ export default function PersonalInfo({
               onChange={onChange}
             />
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='country'>Country</label>
             <input
               type='text'
@@ -105,7 +110,7 @@ export default function PersonalInfo({
           </div>
         </div>
         <div className='contact'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='phone'>Phone</label>
             <input
               type='text'
@@ -116,7 +121,7 @@ export default function PersonalInfo({
             />
             {phoneError && <p style={{ color: "red" }}>{phoneError}</p>}
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='email'>Email</label>
             <input
               type='email'

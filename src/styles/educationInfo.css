@@ -1,4 +1,29 @@
 .school {
-    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
 }
 
+.college-name,
+.study-field
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.college-name div,
+.study-field div {
+    flex-basis: 48%;
+}
+
+.degree {
+    flex: 1;
+}
+#degree 
+{
+    width: 45%;    
+}

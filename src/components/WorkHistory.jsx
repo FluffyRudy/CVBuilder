@@ -1,12 +1,13 @@
 import "../styles/workHistory.css";
+
 export default function WorkHistory({ dataProps, onChange }) {
   return (
     <div className='work'>
       <h1 className='heading'>Tell us about your most recent job</h1>
-      <p className='contact-suggestion'>We’ll start there and work backward.</p>
+      <p className='suggestion'>We’ll start there and work backward.</p>
       <form onSubmit={(e) => e.preventDefault()}>
         <div className='job-title'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='title'>Job Title</label>
             <input
               type='text'
@@ -16,7 +17,7 @@ export default function WorkHistory({ dataProps, onChange }) {
               onChange={onChange}
             />
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='employer'>Employer</label>
             <input
               type='text'
@@ -38,7 +39,7 @@ export default function WorkHistory({ dataProps, onChange }) {
           />
         </div>
         <div className='work-duration'>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='start-year'>Start Date</label>
             <input
               type='date'
@@ -48,7 +49,7 @@ export default function WorkHistory({ dataProps, onChange }) {
               onChange={onChange}
             />
           </div>
-          <div className='extended'>
+          <div className='center-vrt'>
             <label htmlFor='end-year'>End Date</label>
             <input
               type='date'
