@@ -4,5 +4,7 @@
     --medium-font: 1.3em;
     --large-font: 1.5em;
     --xlarge-font: 2em;
+    --input-textarea-bg: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    --input-textarea-focus-bg: linear-gradient(to right, #868f96 0%, #596164 100%);
 }
 

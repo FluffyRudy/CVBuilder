@@ -3,9 +3,9 @@ import PersonalInfo from "./components/PersonalInfo.jsx";
 import WorkHistory from "./components/WorkHistory.jsx";
 import EducationInfo from "./components/EducationInfo.jsx";
 import Summery from "./components/summery.jsx";
+import Preview from "./components/preview.jsx";
 import data from "./defaultProps/props.js";
 import "./App.css";
-import "./styles/preview.css";
 import "./styles/variables.css";
 
 function App() {
@@ -17,22 +17,15 @@ function App() {
   const [profilePicture, setProfilePicture] = useState(
     "https://img.icons8.com/3d-fluency/94/user-male-circle.png"
   );
-  const [previewVisibility, setPreviewVisibility] = useState(true);
+  const [previewVisibility, setPreviewVisibility] = useState(false);
 
   function handleInputChange(e, setState) {
     const { name, value } = e.target;
     setState((prevValue) => ({ ...prevValue, [name]: value }));
   }
 
-  //preview is part of each component
   function handleActiveComponent(currentComponent) {
     setActiveComponent(currentComponent);
-
-    if (currentComponent === "PersonalInfo") {
-      setPreviewVisibility(true);
-    } else {
-      setPreviewVisibility(false);
-    }
   }
 
   const renderComponent = () => {
@@ -96,80 +89,30 @@ function App() {
         </button>
 
         <button onClick={() => handleActiveComponent("Summery")}>
-          <span className='circ-lrgtext'>3</span> Summery
+          <span className='circ-lrgtext'>4</span> Summery
+        </button>
+
+        <button
+          className='preview-toggler'
+          onClick={() => setPreviewVisibility(!previewVisibility)}>
+          Preview
         </button>
       </div>
       <div className='content'>
         <div className='form'>
           <div className='dataform'>{renderComponent()}</div>
+
+          {previewVisibility && (
+            <Preview
+              userInfo={userInfo}
+              workInfo={workInfo}
+              educationInfo={educationInfo}
+              summery={summery}
+              profilePicture={profilePicture}
+              setPreviewVisibility={setPreviewVisibility}
+            />
+          )}
         </div>
-        {previewVisibility && (
-          <div className='preview'>
-            <div className='preview-box'>
-              <div className='preview-menu'>
-                <img
-                  width='50'
-                  height='50'
-                  src={profilePicture}
-                  alt='user-male-circle'
-                />
-                <div className='name-profession'>
-                  <p className='preview-fname'>
-                    {userInfo.firstName + " " + userInfo.lastName}
-                  </p>
-                  <p style={{ fontSize: "0.7em" }}>{userInfo.profession}</p>
-                </div>
-
-                <div className='preview-contact-loc'>
-                  <p className='preview-label'>Contact</p>
-                  <p style={{ fontSize: "0.5em" }}>Phone: {userInfo.phone}</p>
-                  <p style={{ fontSize: "0.5em" }}>Email: {userInfo.email}</p>
-                  <p style={{ fontSize: "0.5em" }}>
-                    {userInfo.city && userInfo.city + ", " + userInfo.country}
-                  </p>
-                </div>
-              </div>
-              <div className='other-detail'>
-                <div className='perview-summery'>
-                  <h2 className='preview-label first-label'>Summery</h2>
-                  <p>{summery.info}</p>
-                </div>
-                <div className='work-history'>
-                  <h2 className='preview-label'>Work History</h2>
-
-                  <div className='work-history-info'>
-                    <div className='date'>
-                      <p>{workInfo.startDate && workInfo.startDate + "-"}</p>
-                      <p>{workInfo.endDate}</p>
-                    </div>
-                    <div className='company-employee'>
-                      <p>{workInfo.jobTitle}</p>
-                      <p>
-                        {workInfo.employer && workInfo.employer + ", "}
-                        {workInfo.jobLocation && workInfo.jobLocation}{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className='education-info'>
-                  <h2 className='preview-label'>Education</h2>
-
-                  <div className='education-degree'>
-                    <p>
-                      {educationInfo.degree && educationInfo.degree + ": "}
-                      {educationInfo.field}
-                    </p>
-                    <p>
-                      {educationInfo.collegeName &&
-                        educationInfo.collegeName + ", "}
-                      {educationInfo.collegeLocation}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

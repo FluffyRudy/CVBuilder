@@ -4,7 +4,7 @@ const personalInfo = {
     profession: 'Software Developer',
     city: 'San Francisco',
     country: 'USA',
-    phone: '1234567890',
+    phone: '1234',
     email: 'john.doe@example.com'
 }
 
@@ -26,7 +26,7 @@ const educationInfo = {
 }
 
 const summeryInfo = {
-    info: 'A highly skilled software developer with 7 years of experience in the tech industry.'
+    info: 'A highly motivated Computer Science student with a strong foundation in JavaScript and a keen interest in web development. Proficient in developing user interfaces using React.js, with a focus on performance optimization and maintainable code. Demonstrated ability to learn new technologies quickly and apply them in projects. Seeking an internship opportunity to further enhance my skills and contribute to real-world applications.'
 }
 
 export default {personalInfo, workInfo, educationInfo, summeryInfo};

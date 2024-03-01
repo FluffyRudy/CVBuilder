@@ -116,7 +116,7 @@ export default function PersonalInfo({
               type='text'
               id='phone'
               name='phone'
-              value={dataProps.phoneNumber}
+              value={dataProps.phone}
               onChange={handlePhoneChange}
             />
             {phoneError && <p style={{ color: "red" }}>{phoneError}</p>}
